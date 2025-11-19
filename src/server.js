@@ -6,6 +6,7 @@ import { errorHandler } from './middleware/errorHandler.js';
 import { notFoundHandler } from './middleware/notFoundHandler.js';
 import { logger } from './middleware/logger.js';
 import studentsRoutes from './routers/studentsRoutes.js';
+import authRoutes from './routers/authRoutes.js';
 import { errors } from 'celebrate';
 
 export const app = express();
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(authRoutes);
 app.use(studentsRoutes);
 
 app.get('/test-error', (req, res) => {

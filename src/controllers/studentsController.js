@@ -3,8 +3,8 @@ import { Student } from '../models/student.js';
 
 export const getStudents = async (req, res) => {
   const {
-    page,
-    perPage,
+    page = 1,
+    perPage = 10,
     gender,
     minAvgMark,
     search,
