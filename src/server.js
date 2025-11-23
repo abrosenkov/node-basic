@@ -8,6 +8,7 @@ import { logger } from './middleware/logger.js';
 import studentsRoutes from './routers/studentsRoutes.js';
 import authRoutes from './routers/authRoutes.js';
 import { errors } from 'celebrate';
+import cookieParser from 'cookie-parser';
 
 export const app = express();
 const PORT = process.env.PORT ?? 3000;
@@ -20,6 +21,7 @@ app.use(
   }),
 );
 app.use(cors());
+app.use(cookieParser());
 
 app.use((req, res, next) => {
   console.log(`Time: ${new Date().toLocaleString()}`);
