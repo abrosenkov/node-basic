@@ -12,6 +12,7 @@ import {
   refreshUserSession,
   registerUser,
   requestResetEmail,
+  resetPassword,
 } from '../controllers/authController.js';
 
 const router = Router();
@@ -29,6 +30,10 @@ router.post(
   requestResetEmail,
 );
 
-router.post('/auth/reset-password', celebrate(resetPasswordSchema));
+router.post(
+  '/auth/reset-password',
+  celebrate(resetPasswordSchema),
+  resetPassword,
+);
 
 export default router;

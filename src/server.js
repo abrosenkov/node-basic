@@ -7,6 +7,7 @@ import { notFoundHandler } from './middleware/notFoundHandler.js';
 import { logger } from './middleware/logger.js';
 import studentsRoutes from './routers/studentsRoutes.js';
 import authRoutes from './routers/authRoutes.js';
+import userRoutes from './routers/userRoutes';
 import { errors } from 'celebrate';
 import cookieParser from 'cookie-parser';
 
@@ -30,6 +31,7 @@ app.use((req, res, next) => {
 
 app.use(authRoutes);
 app.use(studentsRoutes);
+app.use(userRoutes);
 
 app.get('/test-error', (req, res) => {
   throw new Error('Something went wrong');
