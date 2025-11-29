@@ -7,7 +7,7 @@ import { notFoundHandler } from './middleware/notFoundHandler.js';
 import { logger } from './middleware/logger.js';
 import studentsRoutes from './routers/studentsRoutes.js';
 import authRoutes from './routers/authRoutes.js';
-import userRoutes from './routers/userRoutes';
+import userRoutes from './routers/userRoutes.js';
 import { errors } from 'celebrate';
 import cookieParser from 'cookie-parser';
 
